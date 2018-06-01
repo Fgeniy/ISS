@@ -1,17 +1,45 @@
-$.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function (data) {
+
+
+    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function (data) {
     var lon = data.iss_position.longitude;
     var lat = data.iss_position.latitude;
 
-    $('.longitude').text('longitude: ' + lon);
-    $('.latitude').text('latitude: ' + lat);
+    $('.longitude').text(lon);
+    $('.latitude').text(lat);
+
+   
+    
+
 });
+
+function initMap() {
+let lat = document.querySelector('.latitude').innerHTML;
+let lng = document.querySelector('.longitude').innerHTML;
+
+    var myLatLng = {lat: parseFloat(lat), lng: parseFloat(lng)};
+    var map = new google.maps.Map(document.querySelector('.map_block'), {
+      zoom: 4,
+      center: myLatLng
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+}
+
+   
+  
+
 $.getJSON('http://api.open-notify.org/astros.json', function (astros) {
     var total_astros = astros.number;
     var present_astros = astros.people;
-   
-    present_astros.forEach(function(astr, i) {
-        $('.astros_list').append('<li>' + astr.name + '</li')
+
+    present_astros.forEach(function (astr, i) {
+        $('.astros_list').append('<li class="astro_card">' + '<img src="avatar.png" alt="">' + astr.name + '</li')
     })
+    $('.total').text(total_astros)
 });
 
 // setTimeout(moveISS, 5000); 
@@ -34,10 +62,8 @@ function showTime() {
 
     if (minute < 10) minute = "0" + minute;
 
-
-    
     document.querySelector('.current_time').innerText = 'Current UTC time: ' + hour + ":" + minute;
-    document.querySelector('.current_date').innerText =daysArr[day] + ", " + numDay + " " + monthsArr[month] + " " + year;
+    document.querySelector('.current_date').innerText = daysArr[day] + ", " + numDay + " " + monthsArr[month] + " " + year;
 
 }
 showTime();
