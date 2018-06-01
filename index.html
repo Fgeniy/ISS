@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,37 @@
     <title>ISS Destination</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-    <div class="row">
-        <div class="location_block">
-            <p>ISS is located at:</p>
-            <p class="coordinats">
-
-            </p>
+    <div class="container">
+        <div class="row">
+            <div class="location_block">
+                <p>ISS is located at:</p>
+                <p class="coordinats">
+                    <span class="longitude"></span>
+                    <span class="latitude">latitude: </span>
+                </p>
+            </div>
+            <div class="time_block">
+                <p  class="current_time">
+                    <span class="current_date"></span>
+                </p>
+                <p class="current_date"></p>
+            </div>
         </div>
-        <div class="time_block">
-            <p>Current UTC time: <span class="current_time"></span></p>
-            <p class="current_date"></p>
+        <div class="row">
+            <div class="map_block">
+
+            </div>
+            <div class="team_block">
+                <ul class="astros_list"></ul>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="map_block">
-
-        </div>
-        <div class="team_block">
-            
-        </div>
-    </div>
-<script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    
 </body>
+
 </html>
