@@ -9,10 +9,12 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, 
 	font-size: 100%;                     /* размер шрифта всем одинаковый */
 }
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 
@@ -107,7 +109,9 @@ h1, h2, h3, h4, h5, h6{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	margin-bottom: 1.2em ;
 	width: 100%;
 }
@@ -120,18 +124,23 @@ h1, h2, h3, h4, h5, h6{
 	
 }
 .location_block {
-	flex-basis:  70%;
+	-ms-flex-preferred-size:  70%;
+	    flex-basis:  70%;
 }
 
 .coordinats,
 .current_date {
 	font-style: italic;
 }
-.time_block {
-    flex-basis: 25%;
+.time_block,
+.team_block
+ {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
 }
 .astros_list {
-	flex-basis: 25%;
+	-ms-flex-preferred-size: 25%;
+	    flex-basis: 25%;
 	list-style-type: none;
 }
 .total_astros {
@@ -139,8 +148,12 @@ h1, h2, h3, h4, h5, h6{
 	padding: 10px;
 }
 .astro_card {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	border-radius: 7px;
 	border: 1px solid black;
 	margin-bottom: 10px;
@@ -148,4 +161,10 @@ h1, h2, h3, h4, h5, h6{
 }
 .astro_card img {
 	margin-right: 5px;
+}
+#map_block {
+	height:450px;
+	-ms-flex-preferred-size: 70%;
+	    flex-basis: 70%;
+	border: 1px solid #000;
 }
