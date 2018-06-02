@@ -1,20 +1,12 @@
-
-
-  
-
-
-
 function initMap() {
     $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function (data) {
         var lon = data.iss_position.longitude;
         var lat = data.iss_position.latitude;
         $('.longitude').text(lon);
         $('.latitude').text(lat);
-       
         var myLatLng = {
-            lat:parseFloat(lat),
-            lng:parseFloat(lon)
-
+            lat: parseFloat(lat),
+            lng: parseFloat(lon)
         }
         var map = new google.maps.Map(document.getElementById('map_block'), {
             zoom: 4,
@@ -25,15 +17,10 @@ function initMap() {
             map: map,
             title: 'International Space Station',
             icon: "http://open-notify.org/Open-Notify-API/map/ISSIcon.png"
-
         });
-    
-      
     });
-
-    setTimeout(  initMap, 5000);
-    }
-       
+    setTimeout(initMap, 5000);
+}
 $.getJSON('http://api.open-notify.org/astros.json', function (astros) {
     var total_astros = astros.number;
     var present_astros = astros.people;
@@ -42,7 +29,6 @@ $.getJSON('http://api.open-notify.org/astros.json', function (astros) {
     })
     $('.total').text(total_astros)
 })
-
 
 function showTime() {
     var monthsArr = ["Jan", "Feb", "Mar", "Apr", "May", "June",

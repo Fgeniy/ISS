@@ -1,170 +1,290 @@
 /* --------------- reset.css --------------- */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+em,
+img,
+strong,
+sub,
+sup,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	outline: 0;                               /* обнуляем отступы и убираем бордюры */
-	vertical-align: baseline;          /* приводим все к одной базовой линии */
-	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
-	font-size: 100%;                     /* размер шрифта всем одинаковый */
+	outline: 0;
+	/* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;
+	/* приводим все к одной базовой линии */
+	background: transparent;
+	/* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;
+	/* размер шрифта всем одинаковый */
 }
+
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-
-a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
-	margin:0;
-	padding:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-	outline:none;
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
 }
-table {						/* устраняем отступы между ячейками таблицы */
-	border-collapse: collapse; 
-	border-spacing: 0;
-}
-td, td img {
-	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
-} 
-img {
- max-width: 100%;
- height: auto;
- width: auto\9; /* ie8 */}
 
-input, select, button, textarea {
-	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
-	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+a {
+	/* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 	outline: none;
 }
-input[type="text"], input[type="password"], textarea {
-	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+
+table {
+	/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+
+td,
+td img {
+	vertical-align: top;
+	/* возвращаем привычное вертикальное выравнивание */
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+	/* ie8 */
+}
+
+input,
+select,
+button,
+textarea {
+	margin: 0;
+	/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%;
+	/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+	padding: 0;
+	/* убираем внутренние отступы для текстовых полей */
+}
+
+input[type="checkbox"] {
+	/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
 	vertical-align: bottom;
 }
+
 input[type="radio"] {
 	vertical-align: text-bottom;
 }
+
 sub {
 	vertical-align: sub;
 	font-size: smaller;
 }
+
 sup {
 	vertical-align: super;
 	font-size: smaller;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display:block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
+
 nav ul {
-	 list-style:none;
+	list-style: none;
 }
+
 /* --------------- /reset.css --------------- */
 
 /* --------------- базовые настройки ---------*/
+
 html {
-	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+	min-height: 100%;
+	/* всегда показываем вертикальную полосу прокрутки  */
 }
+
 body {
 	color: #000;
 	text-align: left;
-	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
-	min-height:100%;
-}
-a, a:visited { /* порядок правил для ссылок имеет значение */
-	text-decoration: underline;
-}
-a:hover {
-	text-decoration:none;
-}
-a:focus, a:active {
-	text-decoration: underline;
-}
-h1, h2, h3, h4, h5, h6{
-	font-weight:normal;
+	font-size: 1em;
+	/* используем безопасные шрифтовые CSS стеки */
+	min-height: 100%;
 }
 
-.clr{
-	clear:both;
+a,
+a:visited {
+	/* порядок правил для ссылок имеет значение */
+	text-decoration: underline;
 }
+
+a:hover {
+	text-decoration: none;
+}
+
+a:focus,
+a:active {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+
+.clr {
+	clear: both;
+}
+
 .clearfix:after {
-    clear: both;
-    content: "";
-    display: table;
+	clear: both;
+	content: "";
+	display: table;
 }
+
 /* --------------- /базовые настройки ---------*/
+
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 1.2em .8em;
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 1.2em .8em;
 }
+
 .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	margin-bottom: 1.2em ;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin-bottom: 1.2em;
 	width: 100%;
 }
+
 .time_block,
 .location_block,
-.team_block 
- {
-    border: 1px solid #000;
+.team_block {
+	border: 1px solid #000;
 	padding: .5em;
-	
 }
+
 .location_block {
-	-ms-flex-preferred-size:  70%;
-	    flex-basis:  70%;
+	-ms-flex-preferred-size: 70%;
+	flex-basis: 70%;
 }
 
 .coordinats,
 .current_date {
 	font-style: italic;
 }
+
 .time_block,
-.team_block
- {
-    -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+.team_block {
+	-ms-flex-preferred-size: 25%;
+	flex-basis: 25%;
 }
+
 .astros_list {
 	-ms-flex-preferred-size: 25%;
-	    flex-basis: 25%;
+	flex-basis: 25%;
 	list-style-type: none;
 }
+
 .total_astros {
 	border-top: 1px solid #000;
 	padding: 10px;
 }
+
 .astro_card {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	border-radius: 7px;
 	border: 1px solid black;
 	margin-bottom: 10px;
 	padding: 5px;
 }
+
 .astro_card img {
 	margin-right: 5px;
 }
+
 #map_block {
-	height:450px;
+	height: 450px;
 	-ms-flex-preferred-size: 70%;
-	    flex-basis: 70%;
+	flex-basis: 70%;
 	border: 1px solid #000;
 }
